@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="Project-Neighborhood Map" content="Map">
+  <meta name="Srinivasa Karthic">
+	<title>Neighbourhood Map</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<!-- Google Maps -->
+<div id="map">Google Maps is unavailable.</div>
+<!-- Fixed navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+     <div class="container">
+       <div class="navbar-header">
+         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+           <span class="sr-only">Toggle navigation</span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand" href="#">Neighborhood Map</a>
+       </div>
+       <div id="navbar" class="navbar-collapse collapse">
+         <ul class="nav navbar-nav">
+           <li><a href="#" id="reset-map" data-bind="click: resetMap">RESET</a></li>
+					 <li class="dropdown">
+						 <input id ="searh-box" type="text" data-bind="textInput: searchPlace, valueUpdate: 'afterkeydown'" autocomplete="off" role="textbox" aria-label="Search" placeholder="Search for Locations">
+						 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><span class="caret"></span></button>
+						 <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" id="map-list" data-bind="foreach: filtered">
+							<li>
+								 <a href="#" id="places-list" data-bind="text: name, click: animate"></a>
+							</li>
+             </ul>
+           </li>
+					 <li>
+         </ul>
+       </div><!--/.nav-collapse -->
+     </div>
+   </nav>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script async defer src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyANbLRinmPlVCGKGQ4emJlKUAhDk2AkmyA&v=3&callback=initApp" onerror="errorHandler()"></script>
+</body>
+</html>
